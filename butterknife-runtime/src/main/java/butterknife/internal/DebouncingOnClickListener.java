@@ -21,7 +21,9 @@ public abstract class DebouncingOnClickListener implements View.OnClickListener 
       // Post to the main looper directly rather than going through the view.
       // Ensure that ENABLE_AGAIN will be executed, avoid static field {@link #enabled}
       // staying in false state.
-      MAIN.post(ENABLE_AGAIN);
+      // MAIN.post(ENABLE_AGAIN);
+      // !!!The modified code is here!!!!
+      MAIN.postDelayed(ENABLE_AGAIN, 300);
 
       doClick(v);
     }
