@@ -14,7 +14,9 @@ public abstract class DebouncingOnClickListener implements View.OnClickListener 
   @Override public final void onClick(View v) {
     if (enabled) {
       enabled = false;
-      v.post(ENABLE_AGAIN);
+      // v.post(ENABLE_AGAIN);
+      // !!!The modified code is here!!!!
+      v.postDelayed(ENABLE_AGAIN, 300);
       doClick(v);
     }
   }
